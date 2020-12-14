@@ -1,20 +1,18 @@
-package org.dom4j.io;
+package org.jdom2.input;
 
-import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.dom4j.Attribute;
-import org.dom4j.Document;
-import org.dom4j.Element;
+import org.jdom2.Attribute;
+import org.jdom2.Document;
+import org.jdom2.Element;
 import org.w3c.dom.Book;
 
 /**
- * 用DOM4J方式解析XML文件
- *
+ * 用JDOM方式解析xml文件
  */
-public class Dom4jParseXML {
+public class JdomParseXML {
 
     public static void main(String[] args) throws Exception {
         String fileName = "src/main/resources/books.xml";
@@ -25,16 +23,14 @@ public class Dom4jParseXML {
     }
 
     public static List<Book> getBooks(String fileName) throws Exception {
-        SAXReader reader = new SAXReader();
-        File file = new File(fileName);
-        Document document = reader.read(file);
-
+        SAXBuilder saxBuilder = new SAXBuilder();
+        Document document = saxBuilder.build(new FileInputStream(fileName));
+        // 获取根节点bookstore
         Element bookstore = document.getRootElement();
-        Iterator<Element> bookElements = bookstore.elementIterator();
-
+        // 获取根节点的子节点，返回子节点的数组
+        List<Element> bookElements = bookstore.getChildren();
         List<Book> books = new ArrayList<Book>();
-        while (bookElements.hasNext()) {
-            Element bookElement = bookElements.next();
+        for (Element bookElement : bookElements) {
             // 获取Book的id属性值
             Book book = getBookByElement(bookElement);
             // 获取Book的name等其他元素的属性值
@@ -42,14 +38,16 @@ public class Dom4jParseXML {
 
             books.add(book);
         }
+
         return books;
+
     }
 
     public static Book getBookByElement(Element bookElement) {
         Book book = new Book();
         // 遍历bookElement的属性,获取id属性的值
-        List<Attribute> attributes = bookElement.attributes();
-        for (Attribute attribute : attributes) {
+        List<Attribute> bookAttributes = bookElement.getAttributes();
+        for (Attribute attribute : bookAttributes) {
             if (attribute.getName().equals("id")) {
                 String id = attribute.getValue();
                 book.setId(Integer.parseInt(id));
@@ -60,11 +58,10 @@ public class Dom4jParseXML {
 
     public static void generateBookDetail(Element bookElement, Book book) {
         // 获取Book标签下的其它标签的值
-        Iterator<Element> details = bookElement.elementIterator();
-        while (details.hasNext()) {
-            Element child = details.next();
+        List<Element> children = bookElement.getChildren();
+        for (Element child : children) {
             String nodeName = child.getName();
-            String nodeValue = child.getStringValue();
+            String nodeValue = child.getValue();
             if (nodeName.equals("name")) {
                 book.setName(nodeValue);
             } else if (nodeName.equals("author")) {
