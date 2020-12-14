@@ -11,5 +11,6 @@
   <modules>
       <module>xml-java</module>
       <module>xml-jdom</module>
+      <module>xml-dom4j</module>
   </modules>
 </project>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book id="1">
+        <name>Harry Potter</name>
+        <author>J. K. Rowling</author>
+        <year>1997</year>
+        <price>78</price>
+    </book>
+    <book id="2">
+        <name>Andersen's Fairy Tales</name>
+        <author>Andersen</author>
+        <year>1875</year>
+        <price>166</price>
+    </book>
+    <book id="3">
+        <name>The Little Prince</name>
+        <author>Antoine de Saint-Exupery</author>
+        <year>1943</year>
+        <price>19</price>
+    </book>
+</bookstore>

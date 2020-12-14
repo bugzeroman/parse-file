@@ -8,7 +8,6 @@ import java.util.List;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
-import org.w3c.dom.Book;
 
 /**
  * 用DOM4J方式解析XML文件

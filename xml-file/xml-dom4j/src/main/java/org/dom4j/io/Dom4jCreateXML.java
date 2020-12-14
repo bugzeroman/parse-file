@@ -52,7 +52,7 @@ public class Dom4jCreateXML {
         OutputFormat format = OutputFormat.createPrettyPrint();
         writer = new XMLWriter(System.out, format);
         writer.write(document);
-        writer.close();
+        // writer.close(); 不能关闭，否则会把System.out关闭了，下面的代码就无法打印了
 
         // 紧凑格式化后，写入到系统标准输出
         System.out.println("---Compact format to System.out---");
