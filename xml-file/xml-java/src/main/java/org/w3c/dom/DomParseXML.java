@@ -37,12 +37,12 @@ public class DomParseXML {
 
     public static List<Book> getBooks(Document document) throws Exception {
 
-        // 按文档顺序返回包含在文档中且具有给定标记名称的所有 Element 的 NodeList
+        // 按文档顺序返回在文档中，具有book标签的所有Node
         NodeList bookNodes = document.getElementsByTagName("book");
 
-        // 用于保存解析的Book对象
+        // 用于保存解析后的Book对象
         List<Book> books = new ArrayList<Book>();
-        // 遍历books
+        // 遍历具有book标签的所有Node
         for (int i = 0; i < bookNodes.getLength(); i++) {
             // 获取第i个book结点
             Node node = bookNodes.item(i);
@@ -58,7 +58,7 @@ public class DomParseXML {
 
             // 按照顺序将book里面的属性加入数组
             ArrayList<String> contents = new ArrayList<>();
-            // 这里由于偶数行是text无用节点，所以只取1,3,5,7节点
+            // 这里由于偶数行是text类型无用节点，所以只取1,3,5,7节点
             for (int j = 1; j < childNodes.getLength(); j += 2) {
                 Node childNode = childNodes.item(j);
                 String content = childNode.getFirstChild().getTextContent();
@@ -76,7 +76,6 @@ public class DomParseXML {
         }
 
         return books;
-
     }
 
 }
