@@ -6,15 +6,14 @@
         <artifactId>xml-file</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>xml-java</artifactId>
+    <artifactId>xml-jdom</artifactId>
     <packaging>jar</packaging>
-    <description>Parse XML file, use Java support basic method, include dom and sax.</description>
-
+    <description>Parse XML file, use JDOM</description>
     <dependencies>
         <dependency>
-            <groupId>org.dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>2.1.3</version>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+            <version>2.0.6</version>
         </dependency>
     </dependencies>
 </project>

@@ -10,5 +10,6 @@
   <description>Parese XML File Toll  Demo, with Java Internal Method, JDom, Dom4J etc.</description>
   <modules>
       <module>xml-java</module>
+      <module>xml-jdom</module>
   </modules>
 </project>
