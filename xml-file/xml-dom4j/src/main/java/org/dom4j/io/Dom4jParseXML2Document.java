@@ -3,7 +3,6 @@ package org.dom4j.io;
 import java.io.File;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 
 /**
@@ -19,7 +18,7 @@ public class Dom4jParseXML2Document {
     /**
      * 使用文件名构建Document
      */
-    public static void createDocumentFromFile() throws DocumentException {
+    public static void createDocumentFromFile() throws Exception {
         String fileName = "src/main/resources/books.xml";
         SAXReader reader = new SAXReader();
         File file = new File(fileName);
@@ -30,7 +29,7 @@ public class Dom4jParseXML2Document {
     /**
      * 使用字符串构建Document
      */
-    public static void createDocumentFromString() throws DocumentException {
+    public static void createDocumentFromString() throws Exception {
         String text = "<person> <name>James</name> </person>";
         Document document = DocumentHelper.parseText(text);
     }
