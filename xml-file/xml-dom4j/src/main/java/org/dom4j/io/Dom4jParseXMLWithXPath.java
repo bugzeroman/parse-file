@@ -18,10 +18,13 @@ public class Dom4jParseXMLWithXPath {
     }
 
     public static void parseXMLWithXPath(Document document) {
-        List<Node> list = document.selectNodes("/bookstore/book");
+        List<Node> list = document.selectNodes("/bookstore/book[1]");
         list.forEach(System.out::println);
-        // Node node = document.selectSingleNode("//foo/bar/author");
-        // String name = node.valueOf("@name");
+        // 只选取第一个结果
+        Node node = document.selectSingleNode("/bookstore/book");
+        System.out.println(node);
+        String id = node.valueOf("@id");
+        System.out.println("id=" + id);
     }
 
     /**
