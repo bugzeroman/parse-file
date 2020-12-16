@@ -21,10 +21,9 @@ public class JAXBParseXML {
         Person person = new Person("yuwen", "男", "南京");
 
         File file = new File(FILE_NAME);
-        JAXBContext jc = null;
         // 根据Person类生成上下文对象
-        jc = JAXBContext.newInstance(Person.class);
-        // 从上下文中获取Marshaller对象，用作将bean编组(转换)为xml
+        JAXBContext jc = JAXBContext.newInstance(Person.class);
+        // 从上下文中获取Marshaller对象，用于把bean转换为xml
         Marshaller ma = jc.createMarshaller();
         // 以下是为生成xml做的一些配置
         // 格式化输出，即按标签自动换行，否则就是一行输出
@@ -34,18 +33,21 @@ public class JAXBParseXML {
         // 是否省略xml头信息，默认不省略（false）
         ma.setProperty(Marshaller.JAXB_FRAGMENT, false);
 
-        // 编组
+        // 编组，把Person对象转换为xml
         ma.marshal(person, file);
+        System.out.println("generateXML=" + file.getName());
     }
 
     /**
      * 把XML直接解析成对应的实体类实例
      */
     public static void generateBean() throws Exception {
-        File file = new File(FILE_NAME);
-        JAXBContext jc = null;
-        jc = JAXBContext.newInstance(Person.class);
+        // 从上下文中获取Unmarshaller对象
+        JAXBContext jc = JAXBContext.newInstance(Person.class);
         Unmarshaller uma = jc.createUnmarshaller();
+
+        // 把XML文件解析为Person对象
+        File file = new File(FILE_NAME);
         Person person = (Person) uma.unmarshal(file);
         System.out.println(person);
     }
