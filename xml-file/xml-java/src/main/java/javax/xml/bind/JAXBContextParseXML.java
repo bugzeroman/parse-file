@@ -10,14 +10,14 @@ public class JAXBContextParseXML {
     public static final String FILE_NAME = "src/main/resources/person.xml";
 
     public static void main(String[] args) throws Exception {
-        generateXML();
-        generateBean();
+        java2XML();
+        xml2java();
     }
 
     /**
      * 通过实体对象直接生成XML
      */
-    public static void generateXML() throws Exception {
+    public static void java2XML() throws Exception {
         Person person = new Person("yuwen", "男", "南京");
 
         File file = new File(FILE_NAME);
@@ -41,7 +41,7 @@ public class JAXBContextParseXML {
     /**
      * 把XML直接解析成对应的实体类实例
      */
-    public static void generateBean() throws Exception {
+    public static void xml2java() throws Exception {
         // 从上下文中获取Unmarshaller对象
         JAXBContext jc = JAXBContext.newInstance(Person.class);
         Unmarshaller uma = jc.createUnmarshaller();
