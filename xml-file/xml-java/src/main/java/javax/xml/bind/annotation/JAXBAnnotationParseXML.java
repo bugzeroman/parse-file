@@ -2,6 +2,7 @@ package javax.xml.bind.annotation;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -34,7 +35,10 @@ public class JAXBAnnotationParseXML {
         String name = "yuwen";
         String gender = "male";
         String addr = "changzhou";
-        Date birthDay = new Date(1989 - 1900, 6 - 1, 30);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(1989, Calendar.JUNE, 30);
+        Date birthDay = calendar.getTime();
         List<Hobby> hobbies = new ArrayList<>(2);
         hobbies.add(new Hobby("read"));
         hobbies.add(new Hobby("running"));
