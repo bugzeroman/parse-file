@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<human>
+    <addr>changzhou</addr>
+    <birthDay>1989-06-30</birthDay>
+    <favourites>apple</favourites>
+    <favourites>game</favourites>
+    <gender>male</gender>
+    <hobbiesWrapper>
+        <hobbies>
+            <hoobyName>read</hoobyName>
+        </hobbies>
+        <hobbies>
+            <hoobyName>running</hoobyName>
+        </hobbies>
+    </hobbiesWrapper>
+    <id>1</id>
+    <name>yuwen</name>
+</human>
