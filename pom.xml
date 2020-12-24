@@ -8,5 +8,6 @@
     <description>Parse File Utility Demo, include XML,YAML,JSON, EXcel etc. parse each kind of file with different ways</description>
     <modules>
         <module>xml-file</module>
+        <module>json-file</module>
     </modules>
 </project>

@@ -5,12 +5,7 @@
     <artifactId>parse-file</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>xml-file</artifactId>
+  <artifactId>json-file</artifactId>
   <packaging>pom</packaging>
-  <description>Parese XML File Tool Demo, with Java Internal Method, JDom, Dom4J etc.</description>
-  <modules>
-      <module>xml-java</module>
-      <module>xml-jdom</module>
-      <module>xml-dom4j</module>
-  </modules>
+  <description>Parese XML File Tool Demo, with Gson, Jackson, Fastjson etc.</description>
 </project>
