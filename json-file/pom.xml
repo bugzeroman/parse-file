@@ -8,4 +8,7 @@
   <artifactId>json-file</artifactId>
   <packaging>pom</packaging>
   <description>Parese XML File Tool Demo, with Gson, Jackson, Fastjson etc.</description>
+  <modules>
+      <module>json-gson</module>
+  </modules>
 </project>
