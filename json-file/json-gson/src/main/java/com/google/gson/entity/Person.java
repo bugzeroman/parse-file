@@ -1,7 +1,10 @@
 package com.google.gson.entity;
 
+import com.google.gson.annotations.Expose;
+
 public class Person {
     private int age = 18;
+    @Expose
     private String name = "王小二";
     // 使用transient修饰的字段不会被序列化
     private transient int sex = 1;
