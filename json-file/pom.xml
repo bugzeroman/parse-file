@@ -10,5 +10,6 @@
   <description>Parese XML File Tool Demo, with Gson, Jackson, Fastjson etc.</description>
   <modules>
       <module>json-gson</module>
+      <module>generate-jsonschema2pojo</module>
   </modules>
 </project>
