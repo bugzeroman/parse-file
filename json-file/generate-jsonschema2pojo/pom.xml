@@ -29,8 +29,12 @@
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>1.0.2</version>
                 <configuration>
-                    <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
+                    <sourceType>json</sourceType>
+                    <sourceDirectory>${basedir}/src/main/resources/json</sourceDirectory>
+                    <outputDirectory>${basedir}/src/main/java</outputDirectory>
                     <targetPackage>com.example.types</targetPackage>
+                    <addCompileSourceRoot>true</addCompileSourceRoot>
+                    <annotationStyle>jackson2</annotationStyle>
                 </configuration>
                 <executions>
                     <execution>
