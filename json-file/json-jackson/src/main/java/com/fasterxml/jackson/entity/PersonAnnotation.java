@@ -6,6 +6,8 @@ import java.util.Date;
  * 演示Jackson注解使用方法的Java Bean
  *
  */
+// 用于过滤多个字段
+// @JsonIgnoreProperties(value = { "birthday", "sex" })
 public class PersonAnnotation {
 
     private String name = "bob";
@@ -31,6 +33,8 @@ public class PersonAnnotation {
         this.birthday = birthday;
     }
 
+    // 用于过滤单个字段
+    // @JsonIgnore
     public int getSex() {
         return sex;
     }
