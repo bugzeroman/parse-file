@@ -28,7 +28,7 @@ public class ObjectMapperDemo {
     }
 
     /**
-     * 把Java对象序列化为JSON字符串
+     * 把Java对象数组序列化为JSON字符串
      */
     public static void writeListAsString() throws Exception {
         Person person1 = new Person();
@@ -44,7 +44,7 @@ public class ObjectMapperDemo {
     }
 
     /**
-     * 从JSON字符串解析Java对象
+     * 从JSON字符串解析为Java对象
      */
     public static void readValueWithString() throws Exception {
         String personStr = "{\r\n" + "  \"age\" : 18,\r\n" + "  \"name\" : \"yuwen\"\r\n" + "}";
