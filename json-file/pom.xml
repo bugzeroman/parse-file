@@ -14,5 +14,6 @@
         <module>generate-jsonschema2pojo</module>
         <module>json-gson</module>
         <module>json-jackson</module>
+        <module>json-json_in_java</module>
     </modules>
 </project>
