@@ -85,5 +85,7 @@ public class XmlMapperDemo {
         System.out.println(childNOde.toString());
         // 第三次解析后取得error-message的文本值（key为空白，对应文本值，不带其他参数）
         System.out.println(childNOde.findValue(""));
+        // findValue和get方法的区别在于，get只会找当前子节点，findValue会查找子节点的子节点
+        System.out.println(childNOde.get(""));
     }
 }
