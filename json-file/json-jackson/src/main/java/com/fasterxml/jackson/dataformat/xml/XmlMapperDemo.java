@@ -5,7 +5,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 public class XmlMapperDemo {
     public static void main(String[] args) throws Exception {
         // convertXML2JSON();
-        convertXML2JSONWithRoot();
+        // convertXML2JSONWithRoot();
+        getXML2JSONTarget();
     }
 
     /**
@@ -39,5 +40,22 @@ public class XmlMapperDemo {
         System.out.println(xml);
         System.out.println(newXml);
         System.out.println(node.toPrettyString());
+    }
+
+    /**
+     * 将XML转换为JSON后，获取指定的部分。
+     */
+    public static void getXML2JSONTarget() throws Exception {
+        String xml = "<hello>\r\n" + "  <capabilities>\r\n" + "    <capability>1.0</capability>\r\n"
+                + "    <capability>1.1</capability>\r\n" + "  </capabilities>\r\n" + "</hello>";
+
+        XmlMapper xmlMapper = new XmlMapper();
+        // 第一次解析后去掉了hello标签
+        JsonNode node = xmlMapper.readTree(xml.getBytes());
+        System.out.println(xml);
+        System.out.println(node.toPrettyString());
+        // 第二次解析后去掉了capabilities标签
+        JsonNode childNOde = node.get("capabilities");
+        System.out.println(childNOde);
     }
 }
