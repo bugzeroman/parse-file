@@ -28,10 +28,12 @@ public class XmlMapperDemo {
      * 补全缺少的头部。
      */
     public static void convertXML2JSONWithRoot() throws Exception {
-        String xml = "<hello message-id=\"105\">\r\n" + "  <capabilities >\r\n" + "    <capability>1.0</capability>\r\n"
-                + "    <capability>1.1</capability>\r\n" + "  </capabilities>\r\n" + "</hello>";
+        String xml = "<data xmlns=\"urn:ietf:params:xml:ns:netconf:base:1.0\">\r\n"
+                + "  <bgp xmlns=\"http://www.huawei.com/netconf/vrp/huawei-bgp\">\r\n" + "    <bgpcomm>\r\n"
+                + "      <bgpSite>\r\n" + "        <bgpEnable>false</bgpEnable>\r\n" + "      </bgpSite>\r\n"
+                + "    </bgpcomm>\r\n" + "  </bgp>\r\n" + "</data>";
         String format = "<temp>%s</temp>";
-        String newXml = xml.format(format, xml);
+        String newXml = String.format(format, xml);
         XmlMapper xmlMapper = new XmlMapper();
         JsonNode node = xmlMapper.readTree(newXml.getBytes());
         System.out.println(xml);
